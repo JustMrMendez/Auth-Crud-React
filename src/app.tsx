@@ -2,6 +2,7 @@ import Account from "./views/account";
 import LogIn from "./views/login";
 import Home from "./views/Home";
 import { Routes, Route, Link } from "react-router-dom";
+import { AuthContextProvider } from "./context/AuthContext";
 
 
 function App() {
@@ -13,11 +14,13 @@ function App() {
                 <Link to="/login">LogIn</Link>
                 <Link to="/account">Account</Link>
             </div>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<LogIn />} />
-                <Route path="/account" element={<Account />} />
-            </Routes>
+            <AuthContextProvider>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<LogIn />} />
+                    <Route path="/account" element={<Account />} />
+                </Routes>
+            </AuthContextProvider>
         </div>
     );
 }

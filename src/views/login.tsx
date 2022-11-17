@@ -1,3 +1,6 @@
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { auth } from "../firebase";
+
 function LogIn() {
 
     return (
