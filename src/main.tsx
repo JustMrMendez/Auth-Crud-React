@@ -1,12 +1,12 @@
-import React from "react";
 import ReactDOM from "react-dom";
-import { db } from "./firebase";
 import "./index.css";
-import Home from "./Home";
+import App from "./app";
+
+import { BrowserRouter as Route } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
+  <Route>
+    <App />
+  </Route>,
   document.getElementById("root")
 );
